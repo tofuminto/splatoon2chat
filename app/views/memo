@@ -1,0 +1,6 @@
+= icon('fas', 'user-edit')
+= icon('fas', 'cog')
+= icon('fas', 'user-cog')
+= icon('fas', 'user-friends')
+= icon('fas', 'user-plus')
+= icon('fab', 'weixin')
