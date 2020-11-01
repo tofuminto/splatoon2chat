@@ -66,3 +66,28 @@
             %li.stage__image
               =image_tag('ajifry.jpg',alt: "stage-image", class: "image")
             %li.stage__name アジフライスタジアム
+  .main
+    .main__chat__tag Chat-Space
+    .main__chat
+      .main__chat__box
+        .main__chat__box__space
+          .messages
+            .message__upper__info
+              %p.name yamada
+              %p.date 2020/11/1 21:32
+            %p.message やまだです。こんにちは。2300*4人募集してます。やまだです。
+          .messages
+            .message__upper__info
+              %p.name テトラポットたなか
+              %p.date 2020/11/1 21:37
+            %p.message テトラポットたなかです。今回は募集すると見せかけてテトラポットの魅力を紹介していきたいと思います。みなさんテトラポットとはご存知でしょうか？あの海に置いてあるやつです。あれってなぜ置いてあるのかと言うと津波がきた際に津波の威力を分散する力があるんですよ。テトラポットってすごくないですか？？私はあの奇怪な形がどうして津波の威力低減に繋がるのかと。その魅力に取り憑かれている次第です。
+          .messages
+            .message__upper__info
+              %p.name ブラックコーヒー苦い
+              %p.date 2020/11/1 21:40
+            %p.message てすと
+        .main__chat__box__input
+          =form_with class: "input__box" do |f|
+            .message__box
+              =f.text_field :content, placeholder: "メッセージを入力", class: "message"
+            =f.submit value: "送信", class: "submit--btn"
