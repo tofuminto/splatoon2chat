@@ -61,7 +61,8 @@
       content: "";
       display: block;
       width: 13.5rem;
-      border-bottom: 0.5px solid aliceblue;
+      height: 0.5px;
+      background-color: aliceblue;
       position: absolute;
       left: 0.5em;
     }
@@ -106,5 +107,85 @@
         }
       }
     }
+  }
+
+  .league--stages {
+    width: 100%;
+    height: 16.5rem;
+    border-bottom: 1px solid aliceblue;
+    color: aliceblue;
+    font-family: Courier;
+    box-sizing: border-box;
+    &__schedule {
+      font-size: 1.3rem;
+      padding: 0.5em 0 0 0.5em;
+    }
+    &__schedule::after {
+      content: "";
+      display: block;
+      width: 17.5rem;
+      height: 1.0px;
+      background-color: aliceblue;
+      position: absolute;
+      left: 0.5em;
+    }
+    .league--match__boxes {
+      display: flex;
+      height: calc(100% - 1.3rem - 0.5px - (1.3rem - 0.5em));
+      .league--match__box {
+        width: 50%;
+        height: 100%;
+        padding: 0.8rem 5.0rem 0;
+        box-sizing: border-box;
+        .stage__detail {
+          display: flex;
+          align-items: center;
+          margin: 0 0 0.8rem 0.8rem;
+          padding-bottom: 0.1rem;
+          border-bottom: 1px solid aliceblue;
+          width: 14rem;
+          .stage__rule {
+            font-size: 0.8rem;
+            margin-left: 1.0rem;
+          }
+        }
+        .stages {
+          display: flex;
+          .stage__list {
+            padding: 0.5rem 1.5rem 0.3rem;
+            border: 1px solid aliceblue;
+            border-radius: 5px;
+            .stage__image {
+              .image {
+                width: 100%;
+                height: auto;
+              }
+            }
+            .stage__name {
+              text-align: center;
+              margin-top: 0.3rem;
+              font-size: 0.8rem;
+            }
+          }
+          .list2 {
+            margin-left: 1.0rem;
+          }
+        }
+      }
+    }
+    // .box1 {
+    //   position: relative;
+    //   display: inline-block;
+    // }
+    // .box1::after {
+    //   content: "";
+    //   height: 70%;
+    //   width: 0.2rem;
+    //   background-color: aliceblue;
+    //   display: inline-block;
+    //   position: absolute;
+    //   right: 0;
+    //   top: 3.4rem;
+    // }
   }
 }
