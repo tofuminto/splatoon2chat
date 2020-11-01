@@ -13,7 +13,7 @@
     .user__tag User Information
     .user__profile 
       .user__profile__name
-        %p Name テトラポットたなか
+        %p Name:テトラポットたなか
       .user__profile__power
         .user__profile__power__box
           .rule ガチエリア
@@ -35,3 +35,34 @@
           %ul
             %li.user__rate X
             %li.user__power 2400
+  .league--stages
+    .league--stages__schedule League-Match Schedule
+    -# being stage and rule
+    .league--match__boxes
+      .league--match__box.box1
+        .stage__detail
+          .stage__time 15:00 ~ 17:00
+          .stage__rule ガチヤグラ
+        .stages
+          %ul.stage__list.list1
+            %li.stage__image
+              =image_tag('chozame.jpg',alt: "stage-image", class: "image")
+            %li.stage__name チョウザメ造船 
+          %ul.stage__list.list2
+            %li.stage__image
+              =image_tag('zatou.jpg',alt: "stage-image", class: "image")
+            %li.stage__name ザトウマーケット
+      -# next stage and rule
+      .league--match__box.box2
+        .stage__detail
+          .stage__time 17:00 ~ 19:00
+          .stage__rule ガチエリア
+        .stages
+          %ul.stage__list.list1
+            %li.stage__image
+              =image_tag('devon.jpg',alt: "stage-image", class: "image")
+            %li.stage__name デボン海洋博物館
+          %ul.stage__list.list2
+            %li.stage__image
+              =image_tag('ajifry.jpg',alt: "stage-image", class: "image")
+            %li.stage__name アジフライスタジアム
