@@ -1,0 +1,75 @@
+.league--stages {
+  width: 100%;
+  height: 16.5rem;
+  border-bottom: 1px solid aliceblue;
+  color: aliceblue;
+  font-family: Courier;
+  box-sizing: border-box;
+  &__schedule {
+    font-size: 1.3rem;
+    padding: 0.5em 0 0 0.5em;
+    position: relative;
+  }
+  &__schedule::after {
+    content: "";
+    display: block;
+    width: 17.5rem;
+    height: 0.5px;
+    background-color: aliceblue;
+    position: absolute;
+    left: 0.5em;
+  }
+  .league--match__boxes {
+    display: flex;
+    height: calc(100% - 1.3rem - 0.5px - (1.3rem - 0.5em));
+    width: 100%;
+    overflow-y: scroll;
+    .league--match__box {
+      height: 100%;
+      padding: 0.8rem 0;
+      width: 100%;
+      box-sizing: border-box;
+      .stage__detail {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0.8rem 2.3rem;
+        padding-bottom: 0.1rem;
+        border-bottom: 1px solid aliceblue;
+        width: 14rem;
+        .stage__rule {
+          font-size: 0.8rem;
+          margin-left: 1.0rem;
+        }
+      }
+      .stages {
+        display: flex;
+        width: 100%;
+        height: calc(100% - 1.0rem - 0.8rem - 0.1rem - 1px);
+        justify-content: space-around;
+        .stage__list {
+          padding: 0.5rem 1.5rem 0.3rem;
+          border: 1px solid aliceblue;
+          border-radius: 5px;
+          .stage__image {
+            .image {
+              width: auto;
+              // height: calc(100% - 1.0rem - 0.8rem - 0.1rem - 1px);
+              height: 8rem;
+            }
+          }
+          .stage__name {
+            text-align: center;
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
+          }
+        }
+        .list2 {
+          margin-left: 1.0rem;
+        }
+      }
+    }
+    .box2 {
+      margin-left: 1.0rem;
+    }
+  }
+}
