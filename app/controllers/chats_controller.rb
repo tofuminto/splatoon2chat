@@ -1,19 +1,15 @@
 class ChatsController < ApplicationController
 
   def index
-    @message = Chat.find(1)
-  end
-
-  def new
     @message = Chat.new
+    @messages = Chat.last(6)
   end
 
   def create
     @message = Chat.new(chat_params)
-    if @message.save!(chat_params)
+    if @message.save!
       redirect_to root_path
     else
-      render "index"
     end
   end
 

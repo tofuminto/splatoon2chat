@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root "chats#index"
+  root to: "chats#index"
   resources :chats, only: [:index, :create]
 end

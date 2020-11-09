@@ -38,6 +38,7 @@
         border-radius: 5px;
         padding: 0.5rem;
         box-sizing: border-box;
+        overflow: auto;
         .messages {
           margin-top: 0.3rem;
           .message__upper__info {

@@ -3,23 +3,14 @@
   .main__chat
     .main__chat__box
       .main__chat__box__space
-        .messages
-          .message__upper__info
-            %p.name yamada
-            %p.date 2020/11/1 21:32
-          %p.message やまだです。こんにちは。2300*4人募集してます。やまだです。
-        .messages
-          .message__upper__info
-            %p.name テトラポットたなか
-            %p.date 2020/11/1 21:37
-          %p.message=@message.content
-        .messages
-          .message__upper__info
-            %p.name ブラックコーヒー苦い
-            %p.date 2020/11/1 21:40
-          %p.message てすと
+        -@messages.each do |message|
+          .messages
+            .message__upper__info
+              %p.name yamada
+              %p.date=message.created_at
+            %p.message=message.content
       .main__chat__box__input
-        =form_with class: "input__box" do |f|
+        =form_with model: @message, class: "input__box" do |f|
           .message__box
             =f.text_field :content, placeholder: "メッセージを入力", class: "message"
           =f.submit "送信", class: "submit--btn"
