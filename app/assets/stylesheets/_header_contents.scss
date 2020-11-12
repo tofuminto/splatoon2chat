@@ -34,7 +34,14 @@
   }
   &__right {
     margin: auto 0;
-    .user__edit {
+    display: flex;
+    align-items: center;
+    .user__name{
+      font-size: 1.0rem;
+      font-family: cursive;
+      padding-right: 1.5rem;
+    }
+    .user__icon {
       text-decoration: none;
       color: #111;
       padding-right: 1.0rem;

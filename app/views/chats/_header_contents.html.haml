@@ -6,13 +6,26 @@
       = link_to root_path, class:'header__title' do
         %p.title Splatoon2 Chat
   .header__contents__right
-    = link_to '#', class:'user__edit' do
-      = icon('fas', 'user-edit')
+    - if user_signed_in?
+      %p.user__name=@nickname
+      -# = link_to user_path(current_user)
+      = link_to "/users/#{current_user.id}", class:'user__icon' do
+        = icon('fas', 'user-edit')
+      = link_to "/users/sign_out", method: :delete, class:'user__icon' do
+        = icon('fas', 'sign-out-alt')
+    - else
+      = link_to "/users/sign_up", class:'user__icon' do
+        = icon('fas', 'user-plus')
+      = link_to "/users/sign_in", class:'user__icon' do
+        = icon('fas', 'sign-in-alt')
 .user__profiles
   .user__tag User Information
   .user__profile 
     .user__profile__name
-      %p Name:テトラポットたなか
+      - if user_signed_in?
+        %p="Name:#{@nickname}"
+      - else
+        %p Name:
     .user__profile__power
       .user__profile__power__box
         .rule ガチエリア

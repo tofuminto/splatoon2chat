@@ -2,7 +2,8 @@ class ChatsController < ApplicationController
 
   def index
     @message = Chat.new
-    @messages = Chat.last(6)
+    @messages = Chat.includes(:user).last(6)
+    @nickname = current_user.nickname
   end
 
   def create
@@ -15,6 +16,6 @@ class ChatsController < ApplicationController
 
   private
   def chat_params
-    params.require(:chat).permit(:content)
+    params.require(:chat).permit(:content).merge(user_id: current_user.id)
   end
 end

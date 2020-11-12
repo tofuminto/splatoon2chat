@@ -6,7 +6,7 @@
         -@messages.each do |message|
           .messages
             .message__upper__info
-              %p.name yamada
+              %p.name=message.user.nickname
               %p.date=message.created_at
             %p.message=message.content
       .main__chat__box__input
