@@ -3,7 +3,7 @@ class ChatsController < ApplicationController
   def index
     @message = Chat.new
     @messages = Chat.includes(:user).last(6)
-    @nickname = current_user.nickname
+    @nickname = current_user.nickname if signed_in?
   end
 
   def create
