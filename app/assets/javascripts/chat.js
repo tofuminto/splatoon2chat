@@ -57,5 +57,6 @@ $(function(){
   });
   if (document.location.href.match(/\/chats/)){
     setInterval(reloadMessages, 7000);
+    console.log("success");
   }
 });
