@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    let html = `<div class="messages" data-message-id=${message.id}>
+    let html = `<div class="messages" data-message-id="${message.id}">
                   <div class="message__upper__info">
                     <p class="name">${message.user_name}</p>
                     <p class="date">${message.date}</p>
