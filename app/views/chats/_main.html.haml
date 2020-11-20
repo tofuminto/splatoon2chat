@@ -4,13 +4,13 @@
     .main__chat__box
       .main__chat__box__space
         -@messages.each do |message|
-          .messages
+          .messages{data: {message_id: message.id}}
             .message__upper__info
               %p.name=message.user.nickname
-              %p.date=message.created_at
+              %p.date=message.created_at.to_s(:datetime_jp)
             %p.message=message.content
       .main__chat__box__input
-        =form_with model: @message, class: "input__box" do |f|
+        =form_with model: @message, local: true, class: "input__box", id: "new__message" do |f|
           .message__box
-            =f.text_field :content, placeholder: "メッセージを入力", class: "message"
-          =f.submit "送信", class: "submit--btn"
+            =f.text_field :content, placeholder: "メッセージを入力", class: "message", id: "message", autocomplete:"off"
+          =f.submit "送信", class: "submit--btn", id: "btn"
