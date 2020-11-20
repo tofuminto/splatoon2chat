@@ -14,7 +14,7 @@ class ChatsController < ApplicationController
         format.json
       end
     else
-      render chats_path
+      render action: :index
     end
   end
 
