@@ -55,7 +55,7 @@ $(function(){
       alert('更新してください');
     })
   });
-  if (document.location.href.match(/\//)){
+  if (document.location.href.match(/\/chats/)){
     setInterval(reloadMessages, 7000);
   }
 });

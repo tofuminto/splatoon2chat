@@ -7,14 +7,14 @@ class ChatsController < ApplicationController
   end
 
   def create
-    @message = Chat.create(chat_params)
+    @message = Chat.new(chat_params)
     if @message.save!
       respond_to do |format|
-        format.html { redirect_to :root }
+        format.html { redirect_to chats_path }
         format.json
       end
     else
-      render :new
+      render chats_path
     end
   end
 
