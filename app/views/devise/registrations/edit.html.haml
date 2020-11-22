@@ -3,12 +3,12 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :email
+    = f.label :nickname
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
+      Currently waiting confirmation for: #{resource.unconfirmed_nickname}
   .field
     = f.label :password
     %i (leave blank if you don't want to change it)
