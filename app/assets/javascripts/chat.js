@@ -47,12 +47,13 @@ $(function(){
       let html = buildHTML(data);
       $('.main__chat__box__space').append(html);
       $('#new__message')[0].reset();
-      $('#btn').prop('disabled', false);
       $('.main__chat__box__space').animate({ scrollTop: $('.main__chat__box__space')[0].scrollHeight});
     })
     .fail(function(){
       alert('メッセージを入力してください');
-      alert('更新してください');
+    })
+    .always(function(){
+      $('#btn').prop('disabled', false);
     })
   });
   if (document.location.href.match(/\/chats/)){

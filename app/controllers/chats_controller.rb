@@ -1,9 +1,13 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @message = Chat.new
     @messages = Chat.includes(:user).last(30)
     @nickname = current_user.nickname if signed_in?
+    if request.url == root_url
+      redirect_to chats_path
+    end
   end
 
   def create
@@ -14,7 +18,7 @@ class ChatsController < ApplicationController
         format.json
       end
     else
-      render action: :index
+      redirect_to chats_path
     end
   end
 
