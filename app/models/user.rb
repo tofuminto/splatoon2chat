@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable,:trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         authentication_keys: [:login]
+         :timeoutable, authentication_keys: [:login]
 
   validates :nickname, presence: true, uniqueness: true, length: {maximum: 10}
   has_many :chats
