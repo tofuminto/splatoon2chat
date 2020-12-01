@@ -38,4 +38,6 @@ production:
   <<: *default
   adapter: mysql2
   encoding: utf8
+  username: root
+  password:
   pool: 5
