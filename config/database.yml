@@ -36,6 +36,6 @@ test:
 
 production:
   <<: *default
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   pool: 5
