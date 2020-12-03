@@ -37,6 +37,5 @@ production:
   encoding: utf8mb4
   database: splatoon2chat_production
   username: root
-  # password: <%= ENV['DATABASE_PASSWORD'] %>
-  password: 'Whome238'
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
