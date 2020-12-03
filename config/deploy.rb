@@ -6,7 +6,7 @@ set :application, "splatoon2chat"
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url, "git@github.com:tofuminto/splatoon2chat.git"
-
+set :deploy_to, "/var/www/splatoon2chat"
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
@@ -36,7 +36,6 @@ end
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
