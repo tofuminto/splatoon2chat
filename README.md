@@ -30,7 +30,7 @@ http://18.178.67.108/<br>
 - メッセージ投稿機能(jquery,ajax)
 
 # テスト
-- RSpec
+- RSpec(予定)
   - 単体テスト(model)
   - 機能テスト(request)
   - 統合テスト(feature)
