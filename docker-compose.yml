@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/splatoon2chat'
+    environment:
+      - 'DATABASE_PASSWORD=<%= ENV['DATABASE_PASSWORD'] %>'
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    imgae: mysql
+    volumes:
+      - 'database:/var/lib/mysql/data'
