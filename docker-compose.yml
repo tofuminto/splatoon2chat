@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  db-data:
+
 services:
   web:
     build: .
@@ -7,8 +10,6 @@ services:
       - '3000:3000'
     volumes:
       - '.:/splatoon2chat'
-    environment:
-      - 'DATABASE_PASSWORD=<%= ENV['DATABASE_PASSWORD'] %>'
     tty: true
     stdin_open: true
     depends_on:
@@ -17,6 +18,9 @@ services:
       - db
 
   db:
-    imgae: mysql
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: mysq_splat2
+      MYSQL_DATABASE: splatoon2chat
     volumes:
-      - 'database:/var/lib/mysql/data'
+      - 'db-data:/var/lib/mysql/mysql.sock'

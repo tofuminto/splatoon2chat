@@ -5,9 +5,12 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql
+  adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: root
+  host: db
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -15,8 +18,7 @@ development:
   recconect: false
   database: splatoon2chat_development
   pool: 5
-  username: root
-  password:
+  password: <%= ENV['MYSQL_PASSWORD_LOCAL'] %>
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,15 +30,12 @@ test:
   recconect: false
   database: splatoon2chat_test
   pool: 5
-  username: root
-  password:
+  password: <%= ENV['MYSQL_PASSWORD_LOCAL'] %>
   host: localhost
 
 production:
   <<: *default
   encoding: utf8mb4
   database: splatoon2chat_production
-  username: root
-  host: db
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  socket: /var/run/mysql/mysql.sock
