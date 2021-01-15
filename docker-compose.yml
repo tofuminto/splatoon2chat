@@ -10,6 +10,8 @@ services:
       - '3000:3000'
     volumes:
       - '.:/splatoon2chat'
+    environment:
+      - 'DATABASE_PASSWORD=mysq_splat2'
     tty: true
     stdin_open: true
     depends_on:
