@@ -1,20 +1,22 @@
 version: 2.1
 jobs:
   build:
+    machine:
+      image: circleci/classic:edge
     steps:
       - checkout
-      - setup_remote_docker
       - run:
-          name: "Docker-compose Build"
+          name: Install Docker Compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      - run:
+          name: docker-compose up
           command: |
             set -x
             docker-compose up --build -d
-
-  # test:
-  #   steps:
-  #     - run:
-  #         name: "test"
-  #         command: |
-  #           docker-compose exec --env 'RAILS_ENV=test' web rails db:create
-  #           docker-compose exec --env 'RAILS_ENV=test' web raild db:migrate
-  #           docker-compose exec --env 'RAILS_ENV=test' web test
+      # - run:
+      #     name: test
+      #     command: |
+      #       set -x
