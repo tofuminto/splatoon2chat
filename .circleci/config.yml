@@ -1,15 +1,20 @@
 version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2 
-
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.5.8-stretch-node
-    executor: ruby/default
     steps:
       - checkout
+      - setup_remote_docker
       - run:
-          name: Which bundler?
-          command: bundle -v 2.2.3
-      - ruby/bundle-install
+          name: "Docker-compose Build"
+          command: |
+            set -x
+            docker-compose up --build -d
+
+  # test:
+  #   steps:
+  #     - run:
+  #         name: "test"
+  #         command: |
+  #           docker-compose exec --env 'RAILS_ENV=test' web rails db:create
+  #           docker-compose exec --env 'RAILS_ENV=test' web raild db:migrate
+  #           docker-compose exec --env 'RAILS_ENV=test' web test
