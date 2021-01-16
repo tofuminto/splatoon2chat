@@ -16,7 +16,15 @@ jobs:
           command: |
             set -x
             docker-compose up --build -d
-      # - run:
-      #     name: test
-      #     command: |
-      #       set -x
+      - run:
+          name: "before_test: setup db"
+          command: |
+            docker-compose run web rails db:create db:migrate
+      - run:
+          name: test
+          command: |
+            docker-compose run web rails test
+      - run:
+          name: docker-compose down
+          command: |
+            docker-compose down
