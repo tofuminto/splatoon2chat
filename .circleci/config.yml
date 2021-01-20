@@ -19,6 +19,8 @@ jobs:
       - run:
           name: "before_test: setup db"
           command: |
+            mkdir /var/run/mysqld
+            touch /var/run/mysqld/mysqld.sock
             docker-compose run web rails db:create db:migrate
       - run:
           name: test
