@@ -18,6 +18,8 @@ jobs:
             docker-compose up --build -d
       - run:
           name: "before_test: setup db"
+          environment: |
+            DB_HOST: 127.0.0.1
           command: |
             docker-compose run web rails db:create db:migrate
       - run:
