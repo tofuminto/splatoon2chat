@@ -19,7 +19,6 @@ jobs:
       - run:
           name: "before_test: setup db"
           command: |
-            sudo service mysql start
             docker-compose run web rails db:create db:migrate
       - run:
           name: test
