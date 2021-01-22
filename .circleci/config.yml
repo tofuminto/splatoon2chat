@@ -22,12 +22,9 @@ jobs:
             set -x
             docker-compose up --build -d
       - run:
-          name: start_mysql
-          command: |
-            docker-compose exec --env 'RAILS_ENV=test' web sudo service mysql restart
-      - run:
           name: setup:db & test 
           command: |
+            set -x
             docker-compose exec --env 'RAILS_ENV=test' web sudo rails db:create
             docker-compose exec --env 'RAILS_ENV=test' web sudo rails db:migrate
             docker-compose exec --env 'RAILS_ENV=test' web sudo rails test
