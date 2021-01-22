@@ -12,16 +12,16 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
+          name: docker-compose up
+          command: |
+            set -x
+            docker-compose up --build -d
+      - run:
           name: make directory make file
           command: |
             sudo mkdir /var/run/mysqld
             sudo touch /var/run/mysqld/mysqld.sock
             sudo chmod 754 /var/run/mysqld/mysqld.sock
-      - run:
-          name: docker-compose up
-          command: |
-            set -x
-            docker-compose up --build -d
       - run:
           name: setup:db create
           command: |
