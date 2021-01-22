@@ -16,7 +16,7 @@ jobs:
           command: |
             sudo mkdir /var/run/mysqld
             sudo touch /var/run/mysqld/mysqld.sock
-            chmod 744 /var/run/mysqld/mysqld.sock
+            sudo chmod 744 /var/run/mysqld/mysqld.sock
             chown mysql:mysql /var/run/mysqld/mysqld.sock
       - run:
           name: docker-compose up
