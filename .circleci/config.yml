@@ -12,18 +12,21 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
+          name: make directory make file
+          command: |
+            mkdir /var/run/mysqld
+            touch /var/run/mysqld/mysqld.sock
+      - run:
           name: docker-compose up
           command: |
             set -x
             docker-compose up --build -d
       - run:
-          name: "before_test: setup db"
+          name: setup:db & test
           command: |
-            docker-compose exec web rails db:create db:migrate
-      - run:
-          name: test
-          command: |
-            docker-compose run web rails test
+            docker-compose exec web rails db:create
+            docker-compose exec web rails db:migrate
+            docker-compose exec web rails test
       - run:
           name: docker-compose down
           command: |
