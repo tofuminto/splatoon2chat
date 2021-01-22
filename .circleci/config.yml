@@ -22,12 +22,12 @@ jobs:
             set -x
             docker-compose up --build -d
       - run:
-          name: database待機
-          command: sleep 10
-      - run:
-          name: start_mysql & setup:db & test
+          name: start_mysql
           command: |
             docker-compose exec --env 'RAILS_ENV=test' web service mysql restart
+      - run:
+          name: setup:db & test 
+          command: |
             docker-compose exec --env 'RAILS_ENV=test' web rails db:create
             docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
             docker-compose exec --env 'RAILS_ENV=test' web rails test
