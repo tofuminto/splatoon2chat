@@ -24,9 +24,9 @@ jobs:
       - run:
           name: setup:db & test
           command: |
-            docker-compose exec web rails db:create
-            docker-compose exec web rails db:migrate
-            docker-compose exec web rails test
+            docker-compose exec --env 'RAILS_ENV=test' web rails db:create
+            docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
+            docker-compose exec --env 'RAILS_ENV=test' web rails test
       - run:
           name: docker-compose down
           command: |
