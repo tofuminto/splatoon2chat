@@ -12,6 +12,13 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
+          name: make directory make file
+          command: |
+            sudo mkdir /var/run/mysqld
+            sudo touch /var/run/mysqld/mysqld.sock
+            chmod 744 /var/run/mysqld/mysqld.sock
+            chown mysql:mysql /var/run/mysqld/mysqld.sock
+      - run:
           name: docker-compose up
           command: |
             set -x
