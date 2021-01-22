@@ -14,8 +14,8 @@ jobs:
       - run:
           name: make directory make file
           command: |
-            mkdir /var/run/mysqld
-            touch /var/run/mysqld/mysqld.sock
+            sudo mkdir /var/run/mysqld
+            sudo touch /var/run/mysqld/mysqld.sock
       - run:
           name: docker-compose up
           command: |
