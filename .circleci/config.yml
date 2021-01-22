@@ -25,6 +25,6 @@ jobs:
           name: setup:db & test 
           command: |
             set -x
-            docker-compose exec --env 'RAILS_ENV=test' web sudo rails db:create
-            docker-compose exec --env 'RAILS_ENV=test' web sudo rails db:migrate
-            docker-compose exec --env 'RAILS_ENV=test' web sudo rails test
+            docker-compose exec --env 'RAILS_ENV=test' web rails db:create
+            docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
+            docker-compose exec --env 'RAILS_ENV=test' web rails test
