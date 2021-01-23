@@ -23,10 +23,8 @@ services:
     image: mysql:5.6
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: "true"
-      MYSQL_DATABASE: splatoon2chat_development
-      MYSQL_USER: root
-      MYSQL_PASSWORD: "true"
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_ROOT_PASSWORD: mysq_splat2
+      MYSQL_DATABASE: splatoon2chat_test
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
       - 'db-data:/var/run/mysqld/mysqld.sock'
