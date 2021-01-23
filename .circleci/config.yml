@@ -22,13 +22,12 @@ jobs:
             set -x
             docker-compose exec --env 'RAILS_ENV=test' web sudo mkdir /var/run/mysqld
             docker-compose exec --env 'RAILS_ENV=test' web sudo touch /var/run/mysqld/mysqld.sock
-            docker-compose exec --env 'RAILS_ENV=test' web sudo chmod 754 /var/run/mysqld/mysqld.sock
+            docker-compose exec --env 'RAILS_ENV=test' web sudo chmod 754 /var/run/mysqld
             docker-compose exec --env 'RAILS_ENV=test' web sudo chown -R mysql /var/run/mysqld
       - run:
           name: setup:db create
           command: |
             set -x
-            set -e
             docker-compose exec --env 'RAILS_ENV=test' web sudo service mysql restart
             docker-compose exec --env 'RAILS_ENV=test' web rails db:create
       - run:
