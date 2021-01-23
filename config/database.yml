@@ -29,7 +29,7 @@ test:
   recconect: false
   database: splatoon2chat_test
   pool: 5
-  password:
+  password: mysq_splat2
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
