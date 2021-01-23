@@ -29,10 +29,9 @@ test:
   recconect: false
   database: splatoon2chat_test
   pool: 5
-  password: mysq_splat2
+  password:
   host: localhost
-  socket: /var/run/mysqld/mysqld.sock
-
+  socket: db
 production:
   <<: *default
   encoding: utf8mb4
