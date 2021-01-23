@@ -30,8 +30,9 @@ test:
   database: splatoon2chat_test
   pool: 5
   password:
-  host: localhost
-  socket: db
+  host: db
+  socket: /var/run/mysqld/mysqld.sock
+
 production:
   <<: *default
   encoding: utf8mb4
