@@ -25,7 +25,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_HOST: trust
-      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
       MYSQL_DATABASE: splatoon2chat
     volumes:
       - 'db-data:/var/run/mysqld/mysqld.sock'
