@@ -24,7 +24,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_HOST: trust
+      MYSQL_HOST: trust
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: splatoon2chat
     volumes:
