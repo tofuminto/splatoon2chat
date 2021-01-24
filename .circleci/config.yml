@@ -34,6 +34,7 @@ jobs:
             docker-compose exec --env 'RAILS_ENV=test' web sudo touch /var/run/mysqld/mysqld.sock
             docker-compose exec --env 'RAILS_ENV=test' web sudo chmod 777 /var/run/mysqld
             docker-compose exec --env 'RAILS_ENV=test' web sudo chown -R mysql /var/run/mysqld
+            docker-compose exec --env 'RAILS_ENV=test' web sudo service mysql restart
 
       - run:
           name: setup:db create
