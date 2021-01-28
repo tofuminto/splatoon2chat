@@ -27,8 +27,8 @@ test:
   <<: *default
   encoding: utf8
   recconect: false
-  database: splatoon2chat_test
-  password:
+  # database: splatoon2chat_test
+  # password:
   host: db
 
 production:
