@@ -8,7 +8,6 @@ default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
   timeout: 5000
-  username: root
 
 development:
   <<: *default
@@ -17,6 +16,7 @@ development:
   database: splatoon2chat_development
   pool: 5
   password:
+  username: root
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
