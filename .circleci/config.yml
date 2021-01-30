@@ -13,11 +13,6 @@ jobs:
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
 
       - run:
-          name: checkout list
-          command: |
-            ls -al
-
-      - run:
           name: docker-compose up
           command: |
             set -x
@@ -47,5 +42,6 @@ jobs:
           command: |
             set -x
             docker-compose exec --env 'RAILS_ENV=test' web rails db:create
+            set +e
             docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
             docker-compose exec --env 'RAILS_ENV=test' web rails test
