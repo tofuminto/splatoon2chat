@@ -3,6 +3,7 @@ jobs:
   build:
     machine:
       image: default
+    working_directory: ~/projects/my-app/splatoon2chat
     steps:
       - checkout
       - run:
