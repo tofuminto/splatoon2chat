@@ -4,7 +4,7 @@ jobs:
     machine:
       image: default
     steps:
-      - checkout
+      # - checkout
       - run:
           name: Install Docker Compose
           command: |
@@ -43,5 +43,5 @@ jobs:
             set -x
             docker-compose exec --env 'RAILS_ENV=test' web rails db:create
             docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
-            set +e
+          # set +e
             docker-compose exec --env 'RAILS_ENV=test' web rails test
