@@ -41,7 +41,7 @@ jobs:
           name: setup:db create
           command: |
             set -x
-            docker-compose exec --env 'RAILS_ENV=test' web rails db:create
-            docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
+            docker-compose exec web rails db:create RAILS_ENV=test
+            docker-compose exec web rails db:migrate RAILS_ENV=test
           # set +e
-            docker-compose exec --env 'RAILS_ENV=test' web rails test
+            docker-compose exec web rails test RAILS_ENV=test
