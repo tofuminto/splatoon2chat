@@ -27,7 +27,7 @@ test:
   <<: *default
   encoding: utf8
   recconect: false
-  # host: db
+  host: db
 
 production:
   <<: *default
