@@ -28,6 +28,9 @@ test:
   encoding: utf8
   recconect: false
   host: db
+  username: root
+  password:
+  port: 3306
 
 production:
   <<: *default
