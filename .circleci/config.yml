@@ -21,8 +21,8 @@ jobs:
 
       - run:
           name: database setup
-          command: sleep 15
-          
+          command: sleep 30
+
       - run:
           name: setup:db create
           command: |
