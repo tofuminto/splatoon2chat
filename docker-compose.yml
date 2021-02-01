@@ -22,12 +22,7 @@ services:
   db:
     image: mysql:5.6
     environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE: splatoon2chat_test
+      MYSQL_ROOT_PASSWORD: "yes"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_USER: root
-      MYSQL_PASSWORD:
-    ports:
-      - '3306:3306'
     volumes:
       - 'db-data:/var/run/mysqld/mysqld.sock'
