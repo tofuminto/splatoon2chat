@@ -1,6 +1,8 @@
 FROM ruby:2.5.8
 RUN apt-get update
 RUN apt-get install -y \
+    build-essential \
+    nodejs \
     default-mysql-client \
     default-mysql-server \
     default-libmysqlclient-dev\
