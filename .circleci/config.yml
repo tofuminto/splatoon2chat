@@ -21,12 +21,11 @@ jobs:
 
       - run:
           name: database setup
-          command: sleep 30
+          command: sleep 10
 
       - run:
           name: setup:db create
           command: |
-            set -o pipefail
             docker-compose exec web rails db:create db:schema:load RAILS_ENV=test
             docker-compose exec web rails db:migrate RAILS_ENV=test
             docker-compose exec web rails test RAILS_ENV=test
