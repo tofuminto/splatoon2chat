@@ -27,6 +27,6 @@ jobs:
           name: setup:db create
           command: |
             set -o pipefail
-            docker-compose exec web rails db:create RAILS_ENV=test
+            docker-compose exec web rails db:create db:schema:load RAILS_ENV=test
             docker-compose exec web rails db:migrate RAILS_ENV=test
             docker-compose exec web rails test RAILS_ENV=test
