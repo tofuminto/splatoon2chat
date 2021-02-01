@@ -25,5 +25,7 @@ services:
       MYSQL_DATABASE: splatoon2chat_test
       MYSQL_USER: root
       MYSQL_PASSWORD: "mysq_splat2"
+      MYSQL_ROOT_HOST: localhost
+      MYSQL_HOST: localhost
     volumes:
       - 'db-data:/var/run/mysqld/mysqld.sock'
