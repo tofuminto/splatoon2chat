@@ -29,6 +29,7 @@ test:
   recconect: false
   host: db
   username: root
+  port: 3306
   password:
 
 production:
