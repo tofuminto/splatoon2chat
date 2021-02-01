@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: mysql2
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
@@ -28,9 +28,9 @@ test:
   encoding: utf8
   recconect: false
   host: db
-  username: root
+  user: root
   port: 3306
-  password:
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
 
 production:
   <<: *default
