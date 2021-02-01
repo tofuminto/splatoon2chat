@@ -28,10 +28,6 @@ test:
   encoding: utf8
   recconect: false
   host: db
-  user: root
-  database: splatoon2chat_test
-  port: 3306
-  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
 
 production:
   <<: *default
