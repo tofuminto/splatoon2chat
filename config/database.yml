@@ -27,7 +27,9 @@ test:
   <<: *default
   encoding: utf8
   recconect: false
-  host: localhost
+  host: db
+  username: root
+  password:
 
 production:
   <<: *default
