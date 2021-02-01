@@ -25,6 +25,7 @@ services:
       MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: splatoon2chat_test
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-
+    ports:
+      - '3306:3306'
     volumes:
       - 'db-data:/var/run/mysqld/mysqld.sock'
