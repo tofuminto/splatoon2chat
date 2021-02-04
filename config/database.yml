@@ -30,7 +30,6 @@ test:
   host: db
   username: root
   password:
-  port: 3306
 
 production:
   <<: *default
