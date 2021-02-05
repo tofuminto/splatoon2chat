@@ -25,8 +25,8 @@ jobs:
 
       - run:
           name: docker-compose log
-          command: docker-compose log | grep mysql
-          
+          command: docker-compose logs | grep mysql
+
       - run:
           name: setup:db create
           command: |

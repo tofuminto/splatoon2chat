@@ -20,7 +20,7 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
       MYSQL_DATABASE: splatoon2chat_test
     volumes:
       - 'db-data:/var/run/mysqld/mysqld.sock'
