@@ -24,6 +24,10 @@ jobs:
           command: sleep 10
 
       - run:
+          name: docker-compose log
+          command: docker-compose log | grep mysql
+          
+      - run:
           name: setup:db create
           command: |
             docker-compose exec web rails db:create db:schema:load RAILS_ENV=test
