@@ -29,7 +29,7 @@ test:
   recconect: false
   host: db
   username: root
-  password:
+  password: P@ssw0rd
 
 production:
   <<: *default
