@@ -6,6 +6,8 @@ RUN apt-get install -y \
     default-mysql-client \
     default-mysql-server \
     default-libmysqlclient-dev\
+    mariadb-server \
+    mariadb-client \
     sudo \
     vim
 
