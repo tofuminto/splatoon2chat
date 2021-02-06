@@ -22,7 +22,7 @@ http://18.178.67.108:3000/<br>
   - EC2
 - Capistrano
 - Docker/Docker-compass
-- CircleCi CI/CD(予定)
+- CircleCi CI/CD
 - RSpec(予定)
 - stat.ink API#個人アプリ引用(予定)
 
