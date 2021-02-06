@@ -14,11 +14,11 @@ development:
   encoding: utf8
   recconect: false
   database: splatoon2chat_development
-  pool: 5
-  password:
+# pool: 5
+  password: P@ssw0rd
   username: root
-  host: localhost
-  socket: /var/run/mysqld/mysqld.sock
+  host: db
+# socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
