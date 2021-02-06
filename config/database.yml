@@ -28,6 +28,7 @@ test:
   encoding: utf8
   recconect: false
   host: db
+  database: splatoon2chat_test
   username: root
   password: P@ssw0rd
 
